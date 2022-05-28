@@ -125,7 +125,7 @@ export default function KithenPerformance() {
   const QRCODE_ID = `https://survey-grilla.netlify.app/`;
 
   const getAspects = async () => {
-    const response = await fetch('http://103.116.105.48/api/performance/feedback', {
+    const response = await fetch('https://dutru-kitchen.online/api/performance/feedback', {
       method: 'GET',
       headers: new Headers({
         Authorization: `Bearer ${token}`,
@@ -136,7 +136,7 @@ export default function KithenPerformance() {
     setAspects(FinalData);
   };
   const getData = async () => {
-    const response = await fetch('http://103.116.105.48/api/performance/order?start=2022-4-14', {
+    const response = await fetch('https://dutru-kitchen.online/api/performance/order?start=2022-4-14', {
       method: 'GET',
       headers: new Headers({
         Authorization: `Bearer ${token}`,
@@ -147,7 +147,7 @@ export default function KithenPerformance() {
     setDataOrders(FinalData);
   };
   const getFeedbackList = async () => {
-    const response = await fetch('http://103.116.105.48/api/performance/feedback-list', {
+    const response = await fetch('https://dutru-kitchen.online/api/performance/feedback-list', {
       method: 'GET',
       headers: new Headers({
         Authorization: `Bearer ${token}`,
@@ -163,7 +163,7 @@ export default function KithenPerformance() {
     let dateArrays = [];
     let totalIncome = [];
     const response = await fetch(
-      `http://103.116.105.48/api/performance/order-amount-by-day?start=${startDayGraph1}&end=${endDayGraph1}`,
+      `https://dutru-kitchen.online/api/performance/order-amount-by-day?start=${startDayGraph1}&end=${endDayGraph1}`,
       {
         method: 'GET',
         headers: new Headers({
@@ -208,7 +208,7 @@ export default function KithenPerformance() {
     let hoursArray = [];
 
     const response = await fetch(
-      `http://103.116.105.48/api/performance/order-by-hour?start=${startDayGraph1}&end=${endDayGraph1}`,
+      `https://dutru-kitchen.online/api/performance/order-by-hour?start=${startDayGraph1}&end=${endDayGraph1}`,
       {
         method: 'GET',
         headers: new Headers({

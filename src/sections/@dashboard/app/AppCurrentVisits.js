@@ -49,7 +49,7 @@ export default function AppCurrentVisits() {
   const token = sessionStorage.getItem('token');
   const [refresh, setRefresh] = useState(false);
   const getData = async () => {
-    const response = await fetch(`http://103.116.105.48/api/performance/top5?start=${startDay}`, {
+    const response = await fetch(`https://dutru-kitchen.online/api/performance/top5?start=${startDay}`, {
       method: 'GET',
       headers: new Headers({
         Authorization: `Bearer ${token}`,

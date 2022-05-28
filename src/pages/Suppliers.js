@@ -104,7 +104,7 @@ function a11yProps(index) {
 async function createSupplier(obj) {
   const token = sessionStorage.getItem('token');
 
-  return fetch('http://103.116.105.48/api/supplier', {
+  return fetch('https://dutru-kitchen.online/api/supplier', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -117,7 +117,7 @@ async function acceptInvoice(obj) {
   const idInvoice = localStorage.getItem('idInvoice');
   const TOKEN = sessionStorage.getItem('token');
 
-  return fetch(`http://103.116.105.48/api/inventory/invoice/accept/${idInvoice}`, {
+  return fetch(`https://dutru-kitchen.online/api/inventory/invoice/accept/${idInvoice}`, {
     method: 'PATCH',
     headers: {
       Authorization: `Bearer ${TOKEN}`,
@@ -130,7 +130,7 @@ async function updateStatusO2O(obj) {
   const idInvoice1 = localStorage.getItem('idInvoice1');
   const TOKEN = sessionStorage.getItem('token');
 
-  return fetch(`http://103.116.105.48/api/inventory/invoice/delivery/${idInvoice1}`, {
+  return fetch(`https://dutru-kitchen.online/api/inventory/invoice/delivery/${idInvoice1}`, {
     method: 'PATCH',
     headers: {
       Authorization: `Bearer ${TOKEN}`,
@@ -177,7 +177,7 @@ export default function Suppliers() {
     );
   };
   const getSuppliers = async () => {
-    const response = await fetch('http://103.116.105.48/api/supplier', {
+    const response = await fetch('https://dutru-kitchen.online/api/supplier', {
       method: 'GET',
       headers: new Headers({
         Authorization: `Bearer ${token}`,
@@ -188,7 +188,7 @@ export default function Suppliers() {
     setSuppliers(FinalData);
   };
   const getInvoiceHistory = async () => {
-    const response = await fetch('http://103.116.105.48/api/inventory/invoice', {
+    const response = await fetch('https://dutru-kitchen.online/api/inventory/invoice', {
       method: 'GET',
       headers: new Headers({
         Authorization: `Bearer ${token}`,

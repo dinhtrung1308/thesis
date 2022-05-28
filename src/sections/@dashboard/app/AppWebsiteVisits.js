@@ -62,7 +62,7 @@ export default function AppWebsiteVisits() {
     };
     axios
       .get(
-        `http://103.116.105.48/api/performance/order-amount-by-day?start=${startDayGraph1}&end=${endDayGraph1}`,
+        `https://dutru-kitchen.online/api/performance/order-amount-by-day?start=${startDayGraph1}&end=${endDayGraph1}`,
         config
       )
       .then((res) => {

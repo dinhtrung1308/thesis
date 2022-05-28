@@ -90,7 +90,7 @@ const style = {
 async function createIngredientFunction(obj) {
   const token = sessionStorage.getItem('token');
 
-  return fetch('http://103.116.105.48/api/inventory/ingredient', {
+  return fetch('https://dutru-kitchen.online/api/inventory/ingredient', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -108,7 +108,7 @@ async function createIngredientFunction(obj) {
 }
 async function orderFunction(obj) {
   const token = sessionStorage.getItem('token');
-  return fetch('http://103.116.105.48/api/inventory/invoice', {
+  return fetch('https://dutru-kitchen.online/api/inventory/invoice', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -122,7 +122,7 @@ async function deleteIngredientFunction(obj) {
   const token = sessionStorage.getItem('token');
 
   console.log(ID);
-  return fetch(`http://103.116.105.48/api/inventory/ingredient/${ID}`, {
+  return fetch(`https://dutru-kitchen.online/api/inventory/ingredient/${ID}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -135,7 +135,7 @@ async function setSupplierFunction(obj) {
   const idSupplier = localStorage.getItem('idSupplier');
   const token = sessionStorage.getItem('token');
 
-  return fetch(`http://103.116.105.48/api/inventory/ingredient/set-supplier/${idSupplier}`, {
+  return fetch(`https://dutru-kitchen.online/api/inventory/ingredient/set-supplier/${idSupplier}`, {
     method: 'PATCH',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -189,7 +189,7 @@ export default function Material() {
   const token = sessionStorage.getItem('token');
   const getIngredients = async () => {
     const response = await fetch(
-      `http://103.116.105.48/api/inventory/ingredient?categoryName=${typeName}`,
+      `https://dutru-kitchen.online/api/inventory/ingredient?categoryName=${typeName}`,
       {
         method: 'GET',
         headers: new Headers({
@@ -202,7 +202,7 @@ export default function Material() {
     setIngredients(FinalData);
   };
   const getActivityRecord = async () => {
-    const response = await fetch('http://103.116.105.48/api/inventory/stock-change', {
+    const response = await fetch('https://dutru-kitchen.online/api/inventory/stock-change', {
       method: 'GET',
       headers: new Headers({
         Authorization: `Bearer ${token}`,
@@ -213,7 +213,7 @@ export default function Material() {
     setActivityRecord(FinalData);
   };
   const getOptionsFilter = async () => {
-    const response = await fetch('http://103.116.105.48/api/inventory/category/get', {
+    const response = await fetch('https://dutru-kitchen.online/api/inventory/category/get', {
       method: 'GET',
       headers: new Headers({
         Authorization: `Bearer ${token}`,
@@ -232,7 +232,7 @@ export default function Material() {
     getOptionsFilter();
   }, [refresh]);
   const getSuppliers = async () => {
-    const response = await fetch('http://103.116.105.48/api/supplier', {
+    const response = await fetch('https://dutru-kitchen.online/api/supplier', {
       method: 'GET',
       headers: new Headers({
         Authorization: `Bearer ${token}`,
@@ -255,7 +255,7 @@ export default function Material() {
       })
     };
     const response = await fetch(
-      `http://103.116.105.48/api/inventory/ingredient/${id}`,
+      `https://dutru-kitchen.online/api/inventory/ingredient/${id}`,
       requestOptions
     );
     if (response.ok) {

@@ -139,7 +139,7 @@ const style2 = {
 
 async function createDishFunction(obj) {
   const TOKEN = sessionStorage.getItem('token');
-  return fetch('http://103.116.105.48/api/dish', {
+  return fetch('https://dutru-kitchen.online/api/dish', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${TOKEN}`,
@@ -151,7 +151,7 @@ async function createDishFunction(obj) {
 
 async function createCategoryFunction(obj) {
   const TOKEN = sessionStorage.getItem('token');
-  return fetch('http://103.116.105.48/api/dish/category', {
+  return fetch('https://dutru-kitchen.online/api/dish/category', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${TOKEN}`,
@@ -163,7 +163,7 @@ async function createCategoryFunction(obj) {
 async function deleteDishFunction(obj) {
   const idDish = localStorage.getItem('idDish');
   const TOKEN = sessionStorage.getItem('token');
-  return fetch(`http://103.116.105.48/api/dish/${idDish}`, {
+  return fetch(`https://dutru-kitchen.online/api/dish/${idDish}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${TOKEN}`,
@@ -259,7 +259,7 @@ export default function Dish() {
     setExpanded(!expanded);
   };
   const getDish = async () => {
-    const response = await fetch(`http://103.116.105.48/api/dish?categoryName=${typeName}`, {
+    const response = await fetch(`https://dutru-kitchen.online/api/dish?categoryName=${typeName}`, {
       method: 'GET',
       headers: new Headers({
         Authorization: `Bearer ${token}`,
@@ -271,7 +271,7 @@ export default function Dish() {
   };
   const getDishIngredigent = async () => {
     const id = localStorage.getItem('idIndex');
-    const response = await fetch(`http://103.116.105.48/api/dish/${id}`, {
+    const response = await fetch(`https://dutru-kitchen.online/api/dish/${id}`, {
       method: 'GET',
       headers: new Headers({
         Authorization: `Bearer ${token}`,
@@ -283,7 +283,7 @@ export default function Dish() {
     setDishIngredient(FinalData);
   };
   const getIngredients = async () => {
-    const response = await fetch('http://103.116.105.48/api/inventory/ingredient', {
+    const response = await fetch('https://dutru-kitchen.online/api/inventory/ingredient', {
       method: 'GET',
       headers: new Headers({
         Authorization: `Bearer ${token}`,
@@ -295,7 +295,7 @@ export default function Dish() {
   };
   const getAnalystics = async () => {
     const response = await fetch(
-      `http://103.116.105.48/api/performance/dishes-cooking-time?start=${startDay}`,
+      `https://dutru-kitchen.online/api/performance/dishes-cooking-time?start=${startDay}`,
       {
         method: 'GET',
         headers: new Headers({
@@ -308,7 +308,7 @@ export default function Dish() {
     setAnalysticsList((analysticsList) => [...analysticsList, ...FinalData]);
   };
   const getOptionsFilter = async () => {
-    const response = await fetch('http://103.116.105.48/api/dish/category/get', {
+    const response = await fetch('https://dutru-kitchen.online/api/dish/category/get', {
       method: 'GET',
       headers: new Headers({
         Authorization: `Bearer ${token}`,
@@ -357,7 +357,7 @@ export default function Dish() {
       body: JSON.stringify({ title: 'Set Category' })
     };
     const response = await fetch(
-      `http://103.116.105.48/api/dish/category/${updatedCategory}/${upDish}`,
+      `https://dutru-kitchen.online/api/dish/category/${updatedCategory}/${upDish}`,
       requestOptions
     );
 

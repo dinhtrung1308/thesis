@@ -61,7 +61,7 @@ function ChartTab3() {
 
   const chart = async () => {
     const response = await fetch(
-      `http://103.116.105.48/api/performance/dish-amount-by-day?start=${startDayTab3}&end=${endDayTab3}`,
+      `https://dutru-kitchen.online/api/performance/dish-amount-by-day?start=${startDayTab3}&end=${endDayTab3}`,
       {
         method: 'GET',
         headers: new Headers({
@@ -82,7 +82,7 @@ function ChartTab3() {
   };
   const chart2 = async () => {
     const response = await fetch(
-      `http://103.116.105.48/api/performance/performance-by-hour?start=${startDayTab3}&end=${endDayTab3}`,
+      `https://dutru-kitchen.online/api/performance/performance-by-hour?start=${startDayTab3}&end=${endDayTab3}`,
       {
         method: 'GET',
         headers: new Headers({

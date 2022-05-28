@@ -12,7 +12,7 @@ import Iconify from '../../../components/Iconify';
 
 // ----------------------------------------------------------------------
 async function registerUser(credentials) {
-  return fetch('http://103.116.105.48/api/auth/signup', {
+  return fetch('https://dutru-kitchen.online/api/auth/signup', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

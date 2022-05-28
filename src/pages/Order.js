@@ -154,7 +154,7 @@ function a11yProps(index) {
 async function createOrderFunction(obj) {
   const TOKEN = sessionStorage.getItem('token');
 
-  return fetch('http://103.116.105.48/api/order', {
+  return fetch('https://dutru-kitchen.online/api/order', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${TOKEN}`,
@@ -167,7 +167,7 @@ async function deleteOrderFunction(obj) {
   const TOKEN = sessionStorage.getItem('token');
 
   const idOrder = localStorage.getItem('idOrder');
-  return fetch(`http://103.116.105.48/api/order/${idOrder}`, {
+  return fetch(`https://dutru-kitchen.online/api/order/${idOrder}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${TOKEN}`,
@@ -180,7 +180,7 @@ async function updateStatusO2I(obj) {
   const idOrder = localStorage.getItem('idOrder');
   const TOKEN = sessionStorage.getItem('token');
 
-  return fetch(`http://103.116.105.48/api/order/accept_order/${idOrder}`, {
+  return fetch(`https://dutru-kitchen.online/api/order/accept_order/${idOrder}`, {
     method: 'PATCH',
     headers: {
       Authorization: `Bearer ${TOKEN}`,
@@ -193,7 +193,7 @@ async function updateStatusI2F(obj) {
   const idOrder = localStorage.getItem('idOrder');
   const TOKEN = sessionStorage.getItem('token');
 
-  return fetch(`http://103.116.105.48/api/order/finish_order/${idOrder}`, {
+  return fetch(`https://dutru-kitchen.online/api/order/finish_order/${idOrder}`, {
     method: 'PATCH',
     headers: {
       Authorization: `Bearer ${TOKEN}`,
@@ -282,7 +282,7 @@ export default function Order() {
     setExpanded(!expanded);
   };
   const getOrders = async () => {
-    const response = await fetch('http://103.116.105.48/api/order?status=open', {
+    const response = await fetch('https://dutru-kitchen.online/api/order?status=open', {
       method: 'GET',
       headers: new Headers({
         Authorization: `Bearer ${token}`,
@@ -293,7 +293,7 @@ export default function Order() {
     setOrders(FinalData);
   };
   const getOrdersInProgress = async () => {
-    const response = await fetch('http://103.116.105.48/api/order?status=processing', {
+    const response = await fetch('https://dutru-kitchen.online/api/order?status=processing', {
       method: 'GET',
       headers: new Headers({
         Authorization: `Bearer ${token}`,
@@ -305,7 +305,7 @@ export default function Order() {
   };
   const getOrdersFinished = async () => {
     const response = await fetch(
-      `http://103.116.105.48/api/order?status=finished&start=${startDay}&end=${endDay}`,
+      `https://dutru-kitchen.online/api/order?status=finished&start=${startDay}&end=${endDay}`,
       {
         method: 'GET',
         headers: new Headers({
@@ -319,7 +319,7 @@ export default function Order() {
   };
   const getDetails = async () => {
     const idDetails = localStorage.getItem('idDetails');
-    const response = await fetch(`http://103.116.105.48/api/order/${idDetails}`, {
+    const response = await fetch(`https://dutru-kitchen.online/api/order/${idDetails}`, {
       method: 'GET',
       headers: new Headers({
         Authorization: `Bearer ${token}`,
@@ -331,7 +331,7 @@ export default function Order() {
   };
   // const getDishIngredigent = async () => {
   //   const id = localStorage.getItem('idIndex');
-  //   const response = await fetch(`http://103.116.105.48/dish/${id}`, {
+  //   const response = await fetch(`https://dutru-kitchen.online/dish/${id}`, {
   //     method: 'GET',
   //     headers: new Headers({
   //       Authorization: `Bearer ${token}`,
@@ -343,7 +343,7 @@ export default function Order() {
   //   setDishIngredient(FinalData);
   // };
   const getListDish = async () => {
-    const response = await fetch('http://103.116.105.48/api/dish', {
+    const response = await fetch('https://dutru-kitchen.online/api/dish', {
       method: 'GET',
       headers: new Headers({
         Authorization: `Bearer ${token}`,
@@ -366,7 +366,7 @@ export default function Order() {
         time: moment(end).format('YYYY-MM-DDTHH:mm:ss')
       })
     };
-    const response = await fetch(`http://103.116.105.48/api/order/start/${id}`, requestOptions);
+    const response = await fetch(`https://dutru-kitchen.online/api/order/start/${id}`, requestOptions);
 
     if (response.ok) {
       setRefresh(true);
@@ -388,7 +388,7 @@ export default function Order() {
         time: moment(end).format('YYYY-MM-DDTHH:mm:ss')
       })
     };
-    const response = await fetch(`http://103.116.105.48/api/order/end/${id}`, requestOptions);
+    const response = await fetch(`https://dutru-kitchen.online/api/order/end/${id}`, requestOptions);
 
     if (response.ok) {
       setRefresh(true);

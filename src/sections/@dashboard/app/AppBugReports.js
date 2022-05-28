@@ -53,7 +53,7 @@ export default function AppBugReports() {
   const [refresh, setRefresh] = useState(false);
   const getData = async () => {
     const response = await fetch(
-      `http://103.116.105.48/api/performance/dishes-cooking-time?start=${startDay}`,
+      `https://dutru-kitchen.online/api/performance/dishes-cooking-time?start=${startDay}`,
       {
         method: 'GET',
         headers: new Headers({
